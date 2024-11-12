@@ -1,5 +1,5 @@
 const { GoogleGenerativeAI } = require("@google/generative-ai");
-const User = require("../model/User"); // Import your User model
+// Import your User model
 require("dotenv").config();
 const path = require("path");
 const fs = require("fs");

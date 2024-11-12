@@ -9,13 +9,11 @@ const {
 } = require("../Controller/checkmedicine");
 
 const { uploadimageforscan, uploaddocuments } = require("../helper/index");
-const { requireUserSignin } = require("../Controller/auth-user");
+// const { requireUserSignin } = require("../Controller/auth-user");
 const router = express.Router();
 
-router.post("/check", requireUserSignin, uploadimageforscan, checkmedicine);
-router.get("/history", requireUserSignin, getMedicineData);
-
-
+// router.post("/check",  uploadimageforscan, checkmedicine);
+// router.get("/history", requireUserSignin, getMedicineData);
 
 router.post("/checkmed", uploadimageforscan, checkMedicinedefault);
 

@@ -12,10 +12,8 @@ require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 8085;
 
-const { errorHandler } = require("./helper/dbErrorHandler");
+// const { errorHandler } = require("./helper/dbErrorHandler");
 const logger = require("./helper/logger");
-const { connectToDatabase } = require("./helper/dbConnection");
-connectToDatabase();
 
 logger(app);
 app.use(cors());
@@ -28,7 +26,6 @@ app.get("/", (req, res) => {
   res.send("Welcome to Medicine ai Home backend");
 });
 
-app.use("/api/auth-user", require("./router/auth-user"));
 app.use("/api/checkmedicine", require("./router/checkmedicine.js"));
 
 async function startServer() {
